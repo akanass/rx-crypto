@@ -1,0 +1,98 @@
+{
+    "name": "@akanass/rx-crypto",
+    "version": "1.0.0",
+    "description": "Crypto module provides some functions for security features like AES key, Key pair, RSA key, PKCS12, Certificate, PEM and more",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "private": false,
+    "scripts": {
+        "pretest": "make clean && make pretest",
+        "test": "make test",
+        "coveralls": "make coveralls",
+        "packaging": "make packaging",
+        "prebuild": "make clean && make pretest && make test",
+        "build": "make tsc",
+        "postbuild": "make packaging"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:akanass/rx-crypto.git"
+    },
+    "keywords": [
+        "Crypto",
+        "RSA",
+        "PEM",
+        "PrivateKey",
+        "PublicKey",
+        "Certificate",
+        "RandomString",
+        "AES",
+        "PKCS12",
+        "KeyPair",
+        "JWT",
+        "Hapiness",
+        "Framework",
+        "NodeJS",
+        "Node",
+        "HTTP",
+        "API",
+        "REST",
+        "Streams",
+        "Async",
+        "Decorator",
+        "RxJS",
+        "Rx",
+        "ReactiveX",
+        "Observable",
+        "Observer",
+        "Module",
+        "ES2015",
+        "ES2016",
+        "ES2017",
+        "ES6",
+        "ES7",
+        "ES8",
+        "Typescript"
+    ],
+    "contributors": [
+        {
+            "name": "Nicolas Jessel",
+            "url": "https://github.com/akanass"
+        }
+    ],
+    "license": "SEE LICENSE IN https://github.com/akanass/rx-crypto/blob/master/LICENSE.md",
+    "bugs": {
+        "url": "https://github.com/akanass/rx-crypto/issues"
+    },
+    "homepage": "https://github.com/akanass/rx-crypto#readme",
+    "dependencies": {
+        "@types/jsonwebtoken": "^8.3.3",
+        "@types/node": "^12.7.2",
+        "@types/node-rsa": "^1.0.0",
+        "@types/pem": "^1.9.5",
+        "@types/randomstring": "^1.1.6",
+        "jsonwebtoken": "^8.5.1",
+        "node-rsa": "^1.0.5",
+        "pem": "^1.14.2",
+        "randomstring": "^1.1.5"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^7.0.0",
+        "@types/jest": "^24.0.18",
+        "coveralls": "^3.0.6",
+        "fs-extra": "^8.1.0",
+        "jest": "^24.9.0",
+        "rimraf": "^3.0.0",
+        "rxjs": "^6.5.2",
+        "ts-jest": "^24.0.2",
+        "ts-node": "^8.3.0",
+        "tslint": "^5.19.0",
+        "typescript": "^3.5.3"
+    },
+    "peerDependencies": {
+        "rxjs": "^6.5.2"
+    },
+    "engines": {
+        "node": ">=7.0.0"
+    }
+}
