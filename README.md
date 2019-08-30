@@ -41,7 +41,6 @@ We use existing node modules to provide these functions: [NodeRSA](https://githu
 * [API in Detail](#api-in-detail)
 * [Contributing](#contributing)
 * [Change History](#change-history)
-* [Maintainers](#maintainers)
 * [License](#license)
 
 ## Using rx-crypto library
