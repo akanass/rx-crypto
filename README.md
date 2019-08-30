@@ -109,7 +109,7 @@ To set up your development environment:
 ## Change History
 
 * v1.0.0 (2019-08-27)
-    * Implementation of `library` with `AES`, `Hash`, `PEM`, `RandomString` and `RSA`
+    * Implementation of `library` with `AES`, `Hash`, `JWT`, `PEM`, `RandomString` and `RSA`
     * Implementation of `Observable's` operators for `AES` and `RSA` features.
     * Related tests.
     * Documentation.
