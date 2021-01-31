@@ -1,10 +1,10 @@
 <div style="margin-bottom:20px;">
 <div style="line-height:60px">
     <a href="https://travis-ci.org/akanass/rx-crypto.svg?branch=next">
-        <img src="https://travis-ci.org/akanass/rx-crypto.svg?branch=next" alt="build" />
+        <img src="https://travis-ci.com/akanass/rx-crypto.svg?branch=master" alt="build" />
     </a>
-    <a href="https://coveralls.io/github/akanass/rx-crypto?branch=next">
-        <img src="https://coveralls.io/repos/github/akanass/rx-crypto/badge.svg?branch=next" alt="coveralls" />
+    <a href="https://coveralls.io/github/akanass/rx-crypto?branch=master">
+        <img src="https://coveralls.io/repos/github/akanass/rx-crypto/badge.svg?branch=master" alt="coveralls" />
     </a>
     <a href="https://david-dm.org/akanass/rx-crypto">
         <img src="https://david-dm.org/akanass/rx-crypto.svg" alt="dependencies" />
