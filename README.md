@@ -1,6 +1,6 @@
 <div style="margin-bottom:20px;">
 <div style="line-height:60px">
-    <a href="https://travis-ci.org/akanass/rx-crypto.svg?branch=next">
+    <a href="https://travis-ci.org/akanass/rx-crypto.svg?branch=master">
         <img src="https://travis-ci.org/akanass/rx-crypto.svg?branch=master" alt="build" />
     </a>
     <a href="https://coveralls.io/github/akanass/rx-crypto?branch=master">
