@@ -1,4 +1,4 @@
-import { flatMap } from 'rxjs/operators';
+import { mergeMap } from 'rxjs/operators';
 import {
     CertificateCreationResult,
     CertificateSubjectReadResult,
@@ -101,7 +101,7 @@ describe('- Integration pem.service.test.ts file', () => {
         '`{country, state, locality, organization, organizationUnit, commonName, emailAddress}`', (done) => {
         pem.createCertificate()
             .pipe(
-                flatMap((c: CertificateCreationResult) => pem.readCertificateInfo(c.certificate))
+                mergeMap((c: CertificateCreationResult) => pem.readCertificateInfo(c.certificate))
             )
             .subscribe((certificateSubjectReadResult: CertificateSubjectReadResult) => {
                 expect(certificateSubjectReadResult).toHaveProperty('country');
@@ -121,7 +121,7 @@ describe('- Integration pem.service.test.ts file', () => {
     test('- `PEM.getPublicKey()` Observable must return a `PublicKeyCreationResult` object `{publicKey}`', (done) => {
         pem.createPrivateKey()
             .pipe(
-                flatMap((c: PrivateKeyCreationResult) => pem.getPublicKey(c.key))
+                mergeMap((c: PrivateKeyCreationResult) => pem.getPublicKey(c.key))
             )
             .subscribe((publicKeyCreationResult: PublicKeyCreationResult) => {
                 expect(publicKeyCreationResult).toHaveProperty('publicKey');
@@ -147,7 +147,7 @@ describe('- Integration pem.service.test.ts file', () => {
     test('- `PEM.getFingerprint()` Observable must return a `FingerprintResult` object `{fingerprint}`', (done) => {
         pem.createCertificate()
             .pipe(
-                flatMap((c: CertificateCreationResult) => pem.getFingerprint(c.certificate))
+                mergeMap((c: CertificateCreationResult) => pem.getFingerprint(c.certificate))
             )
             .subscribe((fingerprintResult: FingerprintResult) => {
                 expect(fingerprintResult).toHaveProperty('fingerprint');
@@ -161,7 +161,7 @@ describe('- Integration pem.service.test.ts file', () => {
     test('- `PEM.getModulus()` Observable must return a `ModulusResult` object `{modulus}`', (done) => {
         pem.createCertificate()
             .pipe(
-                flatMap((c: CertificateCreationResult) => pem.getModulus(c.certificate))
+                mergeMap((c: CertificateCreationResult) => pem.getModulus(c.certificate))
             )
             .subscribe((modulusResult: ModulusResult) => {
                 expect(modulusResult).toHaveProperty('modulus');
@@ -175,7 +175,7 @@ describe('- Integration pem.service.test.ts file', () => {
     test('- `PEM.getDhparamInfo()` Observable must return a `DhParamInfoResult` object `{size, prime}`', (done) => {
         pem.createDhparam()
             .pipe(
-                flatMap((dh: DhParamKeyCreationResult) => pem.getDhparamInfo(dh.dhparam))
+                mergeMap((dh: DhParamKeyCreationResult) => pem.getDhparamInfo(dh.dhparam))
             )
             .subscribe((dhParamInfoResult: DhParamInfoResult) => {
                 expect(dhParamInfoResult).toHaveProperty('size');
@@ -190,13 +190,13 @@ describe('- Integration pem.service.test.ts file', () => {
     test('- `PEM.createPkcs12()` Observable must return a `PKCS12CreationResult` object `{pkcs12}`', (done) => {
         pem.createPrivateKey()
             .pipe(
-                flatMap((pk: PrivateKeyCreationResult) =>
+                mergeMap((pk: PrivateKeyCreationResult) =>
                     pem.createCertificate({
                         clientKey: pk.key,
                         selfSigned: true
                     })
                 ),
-                flatMap((c: CertificateCreationResult) => pem.createPkcs12(c.clientKey, c.certificate, 'password'))
+                mergeMap((c: CertificateCreationResult) => pem.createPkcs12(c.clientKey, c.certificate, 'password'))
             )
             .subscribe((pkcs12Result: PKCS12CreationResult) => {
                 expect(pkcs12Result).toHaveProperty('pkcs12');
@@ -220,14 +220,14 @@ describe('- Integration pem.service.test.ts file', () => {
     test('- `PEM.createPkcs12()` Observable must return true', (done) => {
         pem.createPrivateKey()
             .pipe(
-                flatMap((pk: PrivateKeyCreationResult) =>
+                mergeMap((pk: PrivateKeyCreationResult) =>
                     pem.createCertificate({
                         clientKey: pk.key,
                         selfSigned: true
                     })
                 ),
-                flatMap((c: CertificateCreationResult) => pem.createPkcs12(c.clientKey, c.certificate, 'password')),
-                flatMap((pkcs12Result: PKCS12CreationResult) => pem.checkPkcs12(pkcs12Result.pkcs12, 'password'))
+                mergeMap((c: CertificateCreationResult) => pem.createPkcs12(c.clientKey, c.certificate, 'password')),
+                mergeMap((pkcs12Result: PKCS12CreationResult) => pem.checkPkcs12(pkcs12Result.pkcs12, 'password'))
             )
             .subscribe((isValid: boolean) => {
                 expect(isValid).toBeTruthy();
@@ -241,12 +241,12 @@ describe('- Integration pem.service.test.ts file', () => {
     test('- `PEM.verifySigningChain()` Observable must return true', (done) => {
         pem.createCertificate({ commonName: 'CA Certificate' })
             .pipe(
-                flatMap((ca: CertificateCreationResult) =>
+                mergeMap((ca: CertificateCreationResult) =>
                     pem.createCertificate({
                         serviceKey: ca.serviceKey, serviceCertificate: ca.certificate, serial: Date.now()
                     })
                         .pipe(
-                            flatMap((cert: CertificateCreationResult) =>
+                            mergeMap((cert: CertificateCreationResult) =>
                                 pem.verifySigningChain(cert.certificate, ca.certificate)
                             )
                         )
@@ -264,7 +264,7 @@ describe('- Integration pem.service.test.ts file', () => {
     test('- `PEM.checkCertificate()` Observable must return true', (done) => {
         pem.createCertificate()
             .pipe(
-                flatMap((c: CertificateCreationResult) => pem.checkCertificate(c.certificate))
+                mergeMap((c: CertificateCreationResult) => pem.checkCertificate(c.certificate))
             )
             .subscribe((isValid: boolean) => {
                 expect(isValid).toBeTruthy();

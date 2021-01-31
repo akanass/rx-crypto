@@ -1,6 +1,6 @@
 import { Buffer } from 'buffer';
 import { Observable, of } from 'rxjs';
-import { flatMap } from 'rxjs/operators';
+import { mergeMap } from 'rxjs/operators';
 import { NodeRSA, RSA } from '../../src';
 import {
     decryptPrivate,
@@ -375,11 +375,11 @@ describe('- Unit rsa.service.test.ts file', () => {
             rsa.loadKey(testKey)
         )
             .pipe(
-                flatMap((key: Observable<NodeRSA>) =>
+                mergeMap((key: Observable<NodeRSA>) =>
                     key
                         .pipe(
                             encryptPrivate('data'),
-                            flatMap((enc: Buffer) =>
+                            mergeMap((enc: Buffer) =>
                                 key
                                     .pipe(
                                         decryptPublic(enc)
@@ -416,11 +416,11 @@ describe('- Unit rsa.service.test.ts file', () => {
             rsa.loadKey(testKey)
         )
             .pipe(
-                flatMap((key: Observable<NodeRSA>) =>
+                mergeMap((key: Observable<NodeRSA>) =>
                     key
                         .pipe(
                             encryptPublic('data'),
-                            flatMap((enc: Buffer) =>
+                            mergeMap((enc: Buffer) =>
                                 key
                                     .pipe(
                                         decryptPrivate(enc, 'utf8')
@@ -469,11 +469,11 @@ describe('- Unit rsa.service.test.ts file', () => {
     test('- `RSA.loadKey().sign()` lettable operator must return an error if no private key provided', (done) => {
         of(rsa.loadKey(testKey))
             .pipe(
-                flatMap((key: Observable<NodeRSA>) =>
+                mergeMap((key: Observable<NodeRSA>) =>
                     key
                         .pipe(
                             exportKey('public'),
-                            flatMap((k: any) =>
+                            mergeMap((k: any) =>
                                 rsa.loadKey(k)
                                     .pipe(
                                         sign('data')
@@ -494,11 +494,11 @@ describe('- Unit rsa.service.test.ts file', () => {
     test('- `RSA.loadKey().verify()` must return a true', (done) => {
         of(rsa.loadKey(testKey))
             .pipe(
-                flatMap((key: Observable<NodeRSA>) =>
+                mergeMap((key: Observable<NodeRSA>) =>
                     key
                         .pipe(
                             sign('data'),
-                            flatMap((signature: Buffer) =>
+                            mergeMap((signature: Buffer) =>
                                 key
                                     .pipe(
                                         verify('data', signature)
