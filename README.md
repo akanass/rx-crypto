@@ -1,7 +1,7 @@
 <div style="margin-bottom:20px;">
 <div style="line-height:60px">
     <a href="https://travis-ci.org/akanass/rx-crypto.svg?branch=next">
-        <img src="https://travis-ci.com/akanass/rx-crypto.svg?branch=master" alt="build" />
+        <img src="https://travis-ci.org/akanass/rx-crypto.svg?branch=master" alt="build" />
     </a>
     <a href="https://coveralls.io/github/akanass/rx-crypto?branch=master">
         <img src="https://coveralls.io/repos/github/akanass/rx-crypto/badge.svg?branch=master" alt="coveralls" />
@@ -57,7 +57,7 @@ $ yarn add @akanass/rx-crypto rxjs
 
 ```javascript
 "dependencies": {
-    "@akanass/rx-crypto": "^1.0.0",
+    "@akanass/rx-crypto": "^1.1.0",
     "rxjs": "^6.5.2",
     //...
 }
