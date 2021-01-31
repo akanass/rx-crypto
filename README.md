@@ -107,7 +107,10 @@ To set up your development environment:
 [Back to top](#table-of-contents)
 
 ## Change History
-
+* v1.1.0 (2021-01-31)
+    * Update packages' versions
+    * Fix tests
+    * Fix `tslint`
 * v1.0.0 (2019-08-27)
     * Implementation of `library` with `AES`, `Hash`, `JWT`, `PEM`, `RandomString` and `RSA`
     * Implementation of `Observable's` operators for `AES` and `RSA` features.
