@@ -58,7 +58,7 @@ $ yarn add @akanass/rx-crypto rxjs
 ```javascript
 "dependencies": {
     "@akanass/rx-crypto": "^1.1.0",
-    "rxjs": "^6.5.2",
+    "rxjs": "^6.6.3",
     //...
 }
 //...
