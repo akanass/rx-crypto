@@ -11,7 +11,7 @@ import {
     PrivateKeyCreationOptions
 } from 'pem';
 import { bindNodeCallback, Observable } from 'rxjs';
-import { flatMap, map } from 'rxjs/operators';
+import { map, mergeMap } from 'rxjs/operators';
 
 /**
  * Private key definition
@@ -208,7 +208,7 @@ export class PEM {
     createKeyPair(keyBitsize?: number, options?: PrivateKeyCreationOptions): Observable<KeyPairCreationResult> {
         return this.createPrivateKey(keyBitsize, options)
             .pipe(
-                flatMap((privateKeyCreationResult: PrivateKeyCreationResult) =>
+                mergeMap((privateKeyCreationResult: PrivateKeyCreationResult) =>
                     this.getPublicKey(privateKeyCreationResult.key)
                         .pipe(
                             map(

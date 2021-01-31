@@ -39,7 +39,7 @@ describe('- Integration hash.service.test.ts file', () => {
     test('- `Hash.generate()` function must return an Observable with error if parameters are wrong', (done) => {
         hash.generate(undefined, undefined, undefined, undefined, undefined)
             .subscribe(() => null, err => {
-                    expect(err.message).toBe('The "digest" argument must be one of type string or null. Received type undefined');
+                    expect(err.message).toBe('The "digest" argument must be of type string. Received undefined');
                     done();
                 }
             );
