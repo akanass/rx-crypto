@@ -6,12 +6,6 @@
     <a href="https://coveralls.io/github/akanass/rx-crypto?branch=master">
         <img src="https://coveralls.io/repos/github/akanass/rx-crypto/badge.svg?branch=master" alt="coveralls" />
     </a>
-    <a href="https://david-dm.org/akanass/rx-crypto">
-        <img src="https://david-dm.org/akanass/rx-crypto.svg" alt="dependencies" />
-    </a>
-    <a href="https://david-dm.org/akanass/rx-crypto?type=dev">
-        <img src="https://david-dm.org/akanass/rx-crypto/dev-status.svg" alt="devDependencies" />
-    </a>
 </div>
 <div>
     <a href="https://www.typescriptlang.org/docs/tutorial.html">
