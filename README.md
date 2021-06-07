@@ -57,8 +57,8 @@ $ yarn add @akanass/rx-crypto rxjs
 
 ```javascript
 "dependencies": {
-    "@akanass/rx-crypto": "^1.1.0",
-    "rxjs": "^6.6.3",
+    "@akanass/rx-crypto": "^2.0.0",
+    "rxjs": "^7.1.0",
     //...
 }
 //...
@@ -107,6 +107,9 @@ To set up your development environment:
 [Back to top](#table-of-contents)
 
 ## Change History
+* v2.0.0 (2021-06-07)
+    * Update packages' versions
+    * Latest `rxjs` version `7.1.0`
 * v1.1.0 (2021-01-31)
     * Update packages' versions
     * Fix tests
@@ -119,6 +122,6 @@ To set up your development environment:
 
 ## License
 
-Copyright (c) 2019 **Nicolas Jessel** Licensed under the [MIT license](https://github.com/akanass/rx-crypto/blob/next/LICENSE.md).
+Copyright (c) 2021 **Nicolas Jessel** Licensed under the [MIT license](https://github.com/akanass/rx-crypto/blob/next/LICENSE.md).
 
 [Back to top](#table-of-contents)
