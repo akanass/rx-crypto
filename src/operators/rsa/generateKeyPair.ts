@@ -1,5 +1,4 @@
 import { MonoTypeOperatorFunction, Observable, Subscriber } from 'rxjs';
-// @ts-ignore
 import * as NodeRSA from 'node-rsa';
 
 /**
@@ -10,7 +9,7 @@ import * as NodeRSA from 'node-rsa';
  *
  * @return {MonoTypeOperatorFunction<NodeRSA>}
  */
-export const generateKeyPair = <NodeRSA>(bits?: number, exponent?: number): MonoTypeOperatorFunction<NodeRSA> =>
+export const generateKeyPair = (bits?: number, exponent?: number): MonoTypeOperatorFunction<NodeRSA> =>
   (source: Observable<NodeRSA>) =>
     new Observable<NodeRSA>((subscriber: Subscriber<NodeRSA>) => {
       const subscription = source.subscribe({

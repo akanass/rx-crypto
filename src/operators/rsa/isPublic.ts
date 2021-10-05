@@ -1,4 +1,3 @@
-// @ts-ignore
 import * as NodeRSA from 'node-rsa';
 import { Observable, OperatorFunction, Subscriber } from 'rxjs';
 
@@ -9,7 +8,7 @@ import { Observable, OperatorFunction, Subscriber } from 'rxjs';
  *
  * @return {OperatorFunction<NodeRSA, boolean>}
  */
-export const isPublic = <NodeRSA>(strict?: boolean): OperatorFunction<NodeRSA, boolean> =>
+export const isPublic = (strict?: boolean): OperatorFunction<NodeRSA, boolean> =>
   (source: Observable<NodeRSA>) =>
     new Observable<boolean>((subscriber: Subscriber<boolean>) => {
       const subscription = source.subscribe({

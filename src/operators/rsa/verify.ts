@@ -1,4 +1,3 @@
-// @ts-ignore
 import * as NodeRSA from 'node-rsa';
 import { Data, Encoding } from 'node-rsa';
 import { Observable, OperatorFunction, Subscriber } from 'rxjs';
@@ -18,7 +17,7 @@ import { Buffer } from 'buffer';
  * @return {OperatorFunction<NodeRSA, R>}
  */
 export const verify =
-  <NodeRSA, R>(data: Data | Buffer, signature: string | Buffer,
+  <T, R>(data: Data | Buffer, signature: string | Buffer,
                sourceEncoding?: Encoding, signatureEncoding?: Encoding): OperatorFunction<NodeRSA, R> =>
     (source: Observable<NodeRSA>) =>
       new Observable<R>((subscriber: Subscriber<R>) => {

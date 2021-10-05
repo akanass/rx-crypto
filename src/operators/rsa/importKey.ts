@@ -1,4 +1,3 @@
-// @ts-ignore
 import * as NodeRSA from 'node-rsa';
 import { Format, Key } from 'node-rsa';
 import { MonoTypeOperatorFunction, Observable, Subscriber } from 'rxjs';
@@ -13,7 +12,7 @@ import { MonoTypeOperatorFunction, Observable, Subscriber } from 'rxjs';
  *
  * @return {MonoTypeOperatorFunction<NodeRSA>}
  */
-export const importKey = <NodeRSA>(key: Key, format?: Format): MonoTypeOperatorFunction<NodeRSA> =>
+export const importKey = (key: Key, format?: Format): MonoTypeOperatorFunction<NodeRSA> =>
   (source: Observable<NodeRSA>) =>
     new Observable<NodeRSA>((subscriber: Subscriber<NodeRSA>) => {
       const subscription = source.subscribe({

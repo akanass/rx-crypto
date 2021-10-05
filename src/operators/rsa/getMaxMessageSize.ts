@@ -1,4 +1,3 @@
-// @ts-ignore
 import * as NodeRSA from 'node-rsa';
 import { Observable, OperatorFunction, Subscriber } from 'rxjs';
 
@@ -9,7 +8,7 @@ import { Observable, OperatorFunction, Subscriber } from 'rxjs';
  *
  * @return {OperatorFunction<NodeRSA, number>}
  */
-export const getMaxMessageSize = <NodeRSA>(): OperatorFunction<NodeRSA, number> =>
+export const getMaxMessageSize = (): OperatorFunction<NodeRSA, number> =>
   (source: Observable<NodeRSA>) =>
     new Observable<number>((subscriber: Subscriber<number>) => {
       const subscription = source.subscribe({

@@ -1,7 +1,6 @@
 import { Buffer } from 'buffer';
 import { Cipher, createCipheriv } from 'crypto';
 import { Observable, OperatorFunction, Subscriber } from 'rxjs';
-// @ts-ignore
 import { AESKeyCreationResult } from '../..';
 
 /**
@@ -13,7 +12,7 @@ import { AESKeyCreationResult } from '../..';
  *
  * @return {OperatorFunction<AESKeyCreationResult, Buffer>} Buffer of encrypted data
  */
-export const encryptWithAesKey = <AESKeyCreationResult>(data: Buffer): OperatorFunction<AESKeyCreationResult, Buffer> =>
+export const encryptWithAesKey = (data: Buffer): OperatorFunction<AESKeyCreationResult, Buffer> =>
   (source: Observable<AESKeyCreationResult>) =>
     new Observable<Buffer>((subscriber: Subscriber<Buffer>) => {
       const subscription = source.subscribe({

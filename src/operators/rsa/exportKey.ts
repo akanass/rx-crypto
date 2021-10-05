@@ -1,4 +1,3 @@
-// @ts-ignore
 import * as NodeRSA from 'node-rsa';
 import { Format, Key } from 'node-rsa';
 import { Observable, OperatorFunction, Subscriber } from 'rxjs';
@@ -12,7 +11,7 @@ import { Observable, OperatorFunction, Subscriber } from 'rxjs';
  *
  * @return {OperatorFunction<NodeRSA, Key>}
  */
-export const exportKey = <NodeRSA>(format?: Format): OperatorFunction<NodeRSA, Key> =>
+export const exportKey = (format?: Format): OperatorFunction<NodeRSA, Key> =>
   (source: Observable<NodeRSA>) =>
     new Observable<Key>((subscriber: Subscriber<Key>) => {
       const subscription = source.subscribe({

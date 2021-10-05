@@ -1,4 +1,3 @@
-// @ts-ignore
 import * as NodeRSA from 'node-rsa';
 import { Encoding } from 'node-rsa';
 import { Observable, OperatorFunction, Subscriber } from 'rxjs';
@@ -15,7 +14,7 @@ import { Buffer } from 'buffer';
  * @return {OperatorFunction<NodeRSA, R>}
  */
 export const decryptPrivate =
-  <NodeRSA, R>(data: Buffer | string, encoding?: 'buffer' | Encoding | 'json'): OperatorFunction<NodeRSA, R> =>
+  <T, R>(data: Buffer | string, encoding?: 'buffer' | Encoding | 'json'): OperatorFunction<NodeRSA, R> =>
     (source: Observable<NodeRSA>) =>
       new Observable<R>((subscriber: Subscriber<R>) => {
         const subscription = source.subscribe({
