@@ -51,8 +51,8 @@ $ yarn add @akanass/rx-crypto rxjs
 
 ```javascript
 "dependencies": {
-    "@akanass/rx-crypto": "^2.0.0",
-    "rxjs": "^7.1.0",
+    "@akanass/rx-crypto": "^2.1.0",
+    "rxjs": "^7.3.1",
     //...
 }
 //...
@@ -101,6 +101,10 @@ To set up your development environment:
 [Back to top](#table-of-contents)
 
 ## Change History
+* v2.1.0 (2021-10-05)
+    * Update packages' versions
+    * Latest `rxjs` version `7.3.1`
+    * Update tests
 * v2.0.0 (2021-06-07)
     * Update packages' versions
     * Latest `rxjs` version `7.1.0`
