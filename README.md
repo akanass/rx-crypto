@@ -104,6 +104,7 @@ To set up your development environment:
 * v2.1.0 (2021-10-05)
     * Update packages' versions
     * Latest `rxjs` version `7.3.1`
+    * Update `operators` to match with latest `rxjs` version
     * Update tests
 * v2.0.0 (2021-06-07)
     * Update packages' versions
